@@ -1,6 +1,6 @@
 Name: pkcs11-helper
 Summary: A library for using PKCS#11 providers
-Version: 1.07
+Version: 1.09
 Release: 1
 Group: System/Libraries
 License: GPLv2 or BSD
@@ -16,8 +16,8 @@ Description: |
     re-insert to a different slot, supporting session expiration and much more all
     using a simple API.
 
-PkgBR:
-    - openssl-devel
+PkgConfigBR:
+    - openssl
 Configure: configure
 ConfigOptions:
     - --disable-doc
