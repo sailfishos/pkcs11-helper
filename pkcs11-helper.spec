@@ -11,7 +11,7 @@ Version:    1.09
 Release:    1
 Group:      System/Libraries
 License:    GPLv2 or BSD
-URL:        http://www.opensc-project.org/pkcs11-helper/
+URL:        http://www.opensc-project.org/opensc/wiki/pkcs11-helper
 Source0:    http://www.opensc-project.org/files/%{name}/%{name}-%{version}.tar.bz2
 Source100:  pkcs11-helper.yaml
 Requires(post): /sbin/ldconfig

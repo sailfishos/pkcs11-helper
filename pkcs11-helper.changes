@@ -1,3 +1,7 @@
+* Mon Aug 20 2012 Antti Alatarvas <antti.alatarvas@gmail.com> - 1.09
+- Updated .spec and .yaml URLs
+- Fixes MER#266 : pkcs11-helper yaml file has invalid URL entry
+
 * Tue Nov 22 2011 Marko Saukko <marko.saukko@cybercom.com> - 1.09
 - Update to version 1.09.
 
