@@ -1,6 +1,6 @@
 Name:       pkcs11-helper
 Summary:    A library for using PKCS#11 providers
-Version:    1.26
+Version:    1.27
 Release:    1
 License:    GPLv2 or BSD
 URL:        https://github.com/OpenSC/pkcs11-helper
@@ -8,6 +8,7 @@ Source0:    %{name}-%{version}.tar.bz2
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
+BuildRequires:  libtool
 BuildRequires:  pkgconfig(openssl)
 
 %description
