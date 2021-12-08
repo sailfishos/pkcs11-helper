@@ -1,3 +1,3 @@
 [submodule "pkcs11-helper"]
 	path = upstream
-	url = https://git.sailfishos.org/mirror/pkcs11-helper.git
+	url = https://github.com/sailfishos-mirror/pkcs11-helper.git
