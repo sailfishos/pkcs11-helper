@@ -1,6 +1,6 @@
 Name:       pkcs11-helper
 Summary:    A library for using PKCS#11 providers
-Version:    1.27
+Version:    1.30.0
 Release:    1
 License:    GPLv2 or BSD
 URL:        https://github.com/OpenSC/pkcs11-helper
@@ -24,7 +24,7 @@ using a simple API.
 %package devel
 Summary:    Development files for pkcs11-helper
 Requires:   %{name} = %{version}-%{release}
-Requires:   openssl-devel
+Requires:   pkgconfig(openssl)
 # For /usr/share/aclocal
 Requires:   automake
 
@@ -65,13 +65,11 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
 %{_libdir}/libpkcs11-helper.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %{_includedir}/pkcs11-helper-1.0/
 %{_libdir}/libpkcs11-helper.so
 %{_libdir}/pkgconfig/libpkcs11-helper-1.pc
 %{_datadir}/aclocal/pkcs11-helper-1.m4
 
 %files doc
-%defattr(-,root,root,-)
 %doc ChangeLog README
 %{_mandir}/man8/pkcs11-helper-1.8*
