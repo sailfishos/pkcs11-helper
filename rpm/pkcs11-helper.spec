@@ -5,6 +5,7 @@ Release:    1
 License:    GPLv2 or BSD
 URL:        https://github.com/OpenSC/pkcs11-helper
 Source0:    %{name}-%{version}.tar.bz2
+Patch1:     0001-openssl-fix-openssl_ex_data_dup-prototype-for-openss.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
@@ -43,7 +44,7 @@ Requires:   %{name} = %{version}-%{release}
 
 
 %prep
-%autosetup -n %{name}-%{version}/upstream
+%autosetup -p1 -n %{name}-%{version}/upstream
 
 %build
 %reconfigure --disable-static --disable-doc
