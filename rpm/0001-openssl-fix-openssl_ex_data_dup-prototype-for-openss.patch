@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Matti=20Lehtim=C3=A4ki?= <matti.lehtimaki@jolla.com>
+Date: Fri, 3 Jan 2025 02:37:25 +0200
+Subject: [PATCH] openssl: fix openssl_ex_data_dup prototype for openssl 1.x
+
+---
+ lib/pkcs11h-openssl.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/lib/pkcs11h-openssl.c b/lib/pkcs11h-openssl.c
+index 611740f26d098c53a757754a8365d86bb428fdd3..0a80861b81278d184807b881bb63d8372dd05bd2 100644
+--- a/lib/pkcs11h-openssl.c
++++ b/lib/pkcs11h-openssl.c
+@@ -340,7 +340,18 @@ int
+ __pkcs11h_openssl_ex_data_dup (
+ 	CRYPTO_EX_DATA *to,
+ 	CRYPTO_EX_DATA *from,
+-	void **from_d,
++	void *from_d,
++	int idx,
++	long argl,
++	void *argp
++) {
++#elif OPENSSL_VERSION_NUMBER < 0x30000000L
++static
++int
++__pkcs11h_openssl_ex_data_dup (
++	CRYPTO_EX_DATA *to,
++	const CRYPTO_EX_DATA *from,
++	void *from_d,
+ 	int idx,
+ 	long argl,
+ 	void *argp
